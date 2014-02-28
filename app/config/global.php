@@ -14,7 +14,7 @@ return array(
 	),
 	'route' => array(
 		'type' => 'pathinfo', #pathinfo rewrite normal
-		'prefix' => $prefix,
+		'prefix' => '',
 	),
 	'view' => array( #模板配置
 		
