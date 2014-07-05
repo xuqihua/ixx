@@ -21,7 +21,8 @@ spl_autoload_register(array('Core', 'auto_load'));
 Config::$path = APP_PATH.'config'.DS;
 View::$path = APP_PATH.'view'.DS;
 //运行
-header('Content-type: text/html; charset=utf-8');
+
+//header('Content-type: text/html; charset=utf-8');
 //header("cache-control:no-cache,must-revalidate");
 //设置路由
 Route::set('default', '(<directory>)(/<controller>(/<action>))', array('directory' => '(admin|common)'))

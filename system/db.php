@@ -248,7 +248,6 @@ class DB {
 			$statement = $this->pdo->prepare($sql);
 			$result = $statement->execute($bindings);
 		} catch (Exception $exception) {
-			exit($sql);
 			$exception = new Exception($sql, $bindings, $exception);
 			throw $exception;
 		}

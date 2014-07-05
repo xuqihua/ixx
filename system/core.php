@@ -21,7 +21,6 @@ class Core {
 				require $path;
 				return true;
 			} else {
-				exit($class);
 				show_error();
 				return false;
 			}
@@ -69,7 +68,7 @@ class Core {
 			return $GET;
 		} else {
 			$routes = Route::all();
-			foreach ($routes as $name => $route) {
+			foreach ($routes as $route) {
 				if ($GET = $route->matches($uri)) {
 					return $GET;
 				}
@@ -94,12 +93,12 @@ class Core {
 	public static function dispatch() {
 		$uri = Core::detect_uri();
 		self::$_params = $uri;
-		$classname = 'Controller_';
+		$class_name = 'Controller_';
 		if(!empty($uri['directory'])) {
-			$classname .= $uri['directory'].'_';
+            $class_name .= $uri['directory'].'_';
 		}
-		$classname .= $uri['controller'];
-		$class = new $classname;
+        $class_name .= $uri['controller'];
+		$class = new $class_name;
 		$action = 'action_'.$uri['action'];
 		if($class->restful == true) {
 			$action = strtolower(self::method()).'_'.$uri['action'];

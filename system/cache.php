@@ -6,13 +6,13 @@ class Cache {
 	public static $path = '';
 	
 	
-	public static _make_directory($key) {
-		$mkey = md5($key);
-		$path = ROOT.'data'.DS.$mkey[0].DS;
+	public static function _make_directory($key) {
+		$hash_key = md5($key);
+		$path = ROOT.'data'.DS.$hash_key[0].DS;
 		if(!is_dir($path)) {
 			mkdir($path,0755,true);
 		}
-		return $path.$mkey;
+		return $path.$hash_key;
 	}
 	public static function set($key, $value, $ttl = 300) {
 		$file = self::_make_directory($key);

@@ -32,8 +32,8 @@ class Config {
 		if(!is_array($array)) return false;
 		$file = self::$path.$filename.EXT;
 		$array = "<?php\nreturn ".var_export($array, true).";";
-		$strlen = file_put_contents($file, $array);
+		$str_len = file_put_contents($file, $array);
 		@chmod($file, 0755);
-		return $strlen;
+		return $str_len;
 	}
 }

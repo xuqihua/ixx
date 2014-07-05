@@ -29,7 +29,7 @@ class Controller {
 		exit;
 	}
 	
-	public function reload($action = '') {
+	public function reload() {
 		show_error();
 	}
 }
