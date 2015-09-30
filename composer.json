@@ -1,0 +1,13 @@
+{
+    "name": "xuqihua/ixx",
+    "description": "framework",
+    "require": {
+        "psr/log": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "xuqihua",
+            "email": "qihuaxu@qq.com"
+        }
+    ]
+}
