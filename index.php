@@ -7,15 +7,9 @@ define('EXT','.php'); //定义类文件的后缀名
 define('APP_PATH',ROOT.'app'.DS);
 define('CHARSET','UTF-8');
 
-require ROOT.'system/core.php';
+require ROOT.'vendor/autoload.php';
 require ROOT.'system/helpers.php';
 
-//设置自动加载的目录
-Core::$directories = array(
-	'system' => ROOT.'system'.DS,
-	'app' => ROOT.'app'.DS,
-);
-spl_autoload_register(array('Core', 'auto_load'));
 
 //设置程序配置文件目录
 Config::$path = APP_PATH.'config'.DS;

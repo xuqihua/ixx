@@ -4,6 +4,14 @@
     "require": {
         "psr/log": "dev-master"
     },
+    "autoload": {
+        "classmap": [
+            "system"
+        ],
+        "psr-4": {
+            "app\\":"app/"
+        }
+    },
     "authors": [
         {
             "name": "xuqihua",

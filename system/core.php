@@ -93,12 +93,8 @@ class Core {
 	public static function dispatch() {
 		$uri = Core::detect_uri();
 		self::$_params = $uri;
-		$class_name = 'Controller_';
-		if(!empty($uri['directory'])) {
-            $class_name .= $uri['directory'].'_';
-		}
-        $class_name .= $uri['controller'];
-		$class = new $class_name;
+        $classname = '\\app\\controller\\'.$uri['directory'].'\\'.$uri['controller'];
+		$class = new $classname;
 		$action = 'action_'.$uri['action'];
 		if($class->restful == true) {
 			$action = strtolower(self::method()).'_'.$uri['action'];
